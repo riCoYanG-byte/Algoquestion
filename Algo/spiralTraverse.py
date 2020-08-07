@@ -15,8 +15,12 @@ def spiralTraverse(array):
             result.append(array[row][endcols-1])
         col = 0
         for col in reversed(range(startcols,endcols-1)):
+            if startrows == endrows-1:
+                break
             result.append(array[endrows-1][col])
         for row in reversed(range(startrows+1,endrows-1)):
+            if startcols == endcols-1:
+                break
             result.append(array[row][startcols])
 
         startrows = startrows+1
@@ -26,4 +30,4 @@ def spiralTraverse(array):
 
     return result
 
-print(spiralTraverse([[1, 2, 3, 4], [12, 13, 14, 5], [11, 16, 15, 6], [10, 9, 8, 7]]))
+print(spiralTraverse([[1, 2, 3, 4], [10, 11, 12, 5], [9, 8, 7, 6]]))
