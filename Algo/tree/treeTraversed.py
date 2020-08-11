@@ -1,4 +1,4 @@
-
+#pre in post
 def inOrderTraverse(tree, array):
     # Write your code here.
     if tree is None:
