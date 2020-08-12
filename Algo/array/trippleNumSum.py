@@ -16,4 +16,5 @@ def threeNumberSum(array, targetSum):
                 right = right - 1
     return result
 
-print(threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6],0))
+
+print(threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0))

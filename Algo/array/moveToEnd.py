@@ -6,7 +6,7 @@ def moveElementToEnd(array, toMove):
         while array[end] == toMove:
             end = end - 1
 
-        if start>end:
+        if start > end:
             break
 
         if array[start] == toMove:
@@ -20,5 +20,4 @@ def moveElementToEnd(array, toMove):
     return array
 
 
-print(moveElementToEnd([2, 1, 2, 2, 2, 3, 4, 2],2))
-
+print(moveElementToEnd([2, 1, 2, 2, 2, 3, 4, 2], 2))
