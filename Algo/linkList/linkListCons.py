@@ -1,4 +1,5 @@
 # This is an input class. Do not edit.
+# need to write after write other questions
 class Node:
     def __init__(self, value):
         self.value = value
