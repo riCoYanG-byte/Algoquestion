@@ -5,6 +5,10 @@ class DoubleLinklist(object):
     pass
 
 
+class DoubleListNode(object):
+    pass
+
+
 class LRUCache:
 
     def __init__(self, maxSize):
@@ -21,24 +25,26 @@ class LRUCache:
             else:
                 self.currentSize += 1
                 self.addrecentUse(key, value)
-            self.cache[key] = DoubleLinklist(key,value)
+            self.cache[key] = DoubleListNode(key,value)
         else:
             self.replaceKeyfromAdd(key, value)
         self.updateMostRecentNode(self.cache[key])
 
     def getValueFromKey(self, key):
         # Write your code here.
-        pass
+        self.updateMostRecentNode(self)
+        return self.cache[key].value
 
     def getMostRecentKey(self):
         # Write your code here.
-        pass
+        return self.mostRecentNode.head.key
 
     def evictleastRecent(self, key, value):
-        pass
+        keyToRemove = self.mostRecentNode.tail.key
+        del self.cache[keyToRemove]
 
     def addrecentUse(self, key, value):
-        pass
+        self.cache[key] = value
 
     def updateMostRecentNode(self):
-        pass
+        self.mostRecentNode.setHead(self)
