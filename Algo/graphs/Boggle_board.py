@@ -1,34 +1,9 @@
-# Do not edit the class below except for the
-# populateSuffixTrieFrom and contains methods.
-# Feel free to add new properties and methods
-# to the class.
-class SuffixTrie:
-    def __init__(self, string):
-        self.root = {}
-        self.endSymbol = "*"
-        self.populateSuffixTrieFrom(string)
+#build a tree to store a bunch of words is okay
 
-    def populateSuffixTrieFrom(self, string):
-        # Write your code here.
-        for i in range(len(string)):
-            self.build(i, string)
+def boggleBoard(board, words):
+    # Write your code here.
+    check =  [[None for values in row] for row in board]
+    for i in range(len(board)):
+        for j in range(len(board[0])):
 
-    def build(self, i, string):
-        current = self.root
 
-    for j in range(i, len(string)):
-        letters = string[j]
-        if letters not in current:
-            current[letters] = {}
-        current = current[letters]
-    current[self.endSymbol] = True
-
-    def contains(self, string):
-        # Write your code here.
-        current = self.root
-
-    for letter in string:
-        if letter not in current:
-            return False
-        current = current[letter]
-    return self.endSymbol in current
