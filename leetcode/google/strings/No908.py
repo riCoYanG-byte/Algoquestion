@@ -36,7 +36,7 @@ def expressiveWords(S, words):
 def getKeyTable(str):
     table = []
     for ele in str:
-        if table == []:
+        if not table:
             table.append([ele, 1])
         else:
             if ele == table[-1][0]:
