@@ -10,6 +10,9 @@
 # All words contain only lowercase alphabetic characters.
 # You may assume no duplicates in the word list.
 # You may assume beginWord and endWord are non-empty and are not the same.
+import collections
+from collections import defaultdict
+
 
 def ladderLength(beginWord, endWord, wordList):
     """
@@ -18,6 +21,27 @@ def ladderLength(beginWord, endWord, wordList):
     :type wordList: List[str]
     :rtype: int
     """
+    # 构建intermedia word
+    intermediaList = defaultdict(list)
+    for word in wordList:
+        for i in range(0, len(word)):
+            key = word[:i] + '*' + word[i + 1:]
+            value = word
+            intermediaList[key].append(value)
+    print(intermediaList)
+
+    # bfs遍历
+    # 相当于通过中间状态bfs
+    queue = collections.deque(beginWord, 1)  # word,level
+    while queue:
+        currentWord, level = queue.popleft()
+        for i in range(len(currentWord)):
+            inter = currentWord[:i] + '*' + currentWord[i + 1:]
+            for word in intermediaList[inter]:
+                if word == endWord:
+                    return level + 1
+                queue.append(word)
+            intermediaList[inter] = []
 
 
-
+print(ladderLength("hit", "cog", ["hot", "dot", "dog", "lot", "log"]))
