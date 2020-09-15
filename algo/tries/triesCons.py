@@ -2,6 +2,7 @@
 # populateSuffixTrieFrom and contains methods.
 # Feel free to add new properties and methods
 # to the class.
+
 class SuffixTrie:
     def __init__(self, string):
         self.root = {}
@@ -16,13 +17,13 @@ class SuffixTrie:
     def build(self, i, string):
         current = self.root
 
-    for j in range(i, len(string)):
+        for j in range(i, len(string)):
 
-        letters = string[j]
-        if letters not in current:
-            current[letters] = {}
-        current = current[letters]
-    current[self.endSymbol] = True
+            letters = string[j]
+            if letters not in current:
+                current[letters] = {}
+            current = current[letters]
+        current[self.endSymbol] = True
 
     def contains(self, string):
         # Write your code here.
