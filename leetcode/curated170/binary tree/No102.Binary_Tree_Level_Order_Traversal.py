@@ -18,6 +18,8 @@
 import collections
 
 # 目的是把当前层级的level都计算完
+# bfs ways
+
 class Solution(object):
     def levelOrder(self, root):
         """
@@ -50,4 +52,28 @@ class Solution(object):
             currentlevel += 1
 
         return result
+
+# Recursion traverse:
+
+# This is the simplest way for this question
+def recursion(self,root):
+    if not root:
+        return []
+    resultTable = [[]]
+
+    level = 0
+    helper(root,level,resultTable)
+    return resultTable
+
+
+def helper(node, level, resultTable):
+    if not node:
+        return
+
+    resultTable[level].append(node.val)
+
+    if node.left:
+        helper(node.left,level+1,resultTable)
+    if node.right:
+        helper(node.right,level+1,resultTable)
 
