@@ -5,6 +5,8 @@
 * _Thanks to them helping me to prepare the algorithm interview._
 * _some questions about google company are also added from Leetcode_
 
+_google medium questions in leetcode finished._
+
 ## _current Situation:_
 
 _University:JiaoTong University_
