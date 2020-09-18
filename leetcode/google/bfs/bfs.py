@@ -7,6 +7,7 @@
 # 字符串 target 代表可以解锁的数字，你需要给出最小的旋转次数，如果无论如何不能解锁，返回 -1。
 
 # bfs 检测路径上的线路是否在deadends中，是则切换路径，不是就add进来，时间复杂度略高
+
 import collections
 
 def getNeighbor(node):
