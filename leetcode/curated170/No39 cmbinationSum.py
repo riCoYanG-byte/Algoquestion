@@ -27,6 +27,7 @@ class Solution(object):
         if remain<0:
             return
         for i in range(len(self.candidates)):
+            # 这题是因为在这里已经添加了
             comp.append(self.candidates[i])
             self.backTracking(remain-self.candidates[i],comp,i)
             comp.pop()
